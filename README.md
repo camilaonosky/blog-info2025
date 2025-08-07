@@ -16,3 +16,8 @@ Trabajo final "Blog de Videojuegos"
  - Inicializo proyecto `django-admin startproject bloginfo2025 `
  - Creacion de carpeta para apps `mkdir apps`
  - Inicializo app BLOG `django-admin startapp blog`
+ - Inicializo el servidor desde "bloginfo2025" `py manage.py runserver`
+ - Creacion de BD en worbench nombrada **bloginfo2025**
+ - Creacion de archivo .env, configuracion de variables y base de datos
+ - Aplico migraciones `python manage.py migrate` (creacion de tablas en  la db propias de django)
+- Verificacion de creacion de tablas
