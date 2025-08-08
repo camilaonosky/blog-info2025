@@ -21,3 +21,4 @@ Trabajo final "Blog de Videojuegos"
  - Creacion de archivo .env, configuracion de variables y base de datos
  - Aplico migraciones `python manage.py migrate` (creacion de tablas en  la db propias de django)
 - Verificacion de creacion de tablas
+- Definicion de modelos (clases o entidades que representan tablas en la db).
