@@ -24,6 +24,7 @@
                                 Autor: {{ articulo.autor.username }}<br>
                                 Fecha: {{ articulo.fecha_creacion|date:"d/m/Y H:i" }}
                             </small>
+                            <a href="{% url 'articulo' articulo.id %}" class="btn btn-primary btn-sm float-end">Leer más</a>
                         </div>
                     </div>
                 </div>

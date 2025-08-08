@@ -36,3 +36,6 @@ INTEGRANTES:
 - Configuracion de la URL de home 
 - Configuracion de visualizacion de imagenes en el navegador
 - Generacion de Script SQL(codigo) a traves de copilot para la insercion de articulos en db.
+- Ejecutar script SQL en la bd
+- Creacion del template **articulo.html** + vista en apps.blog.views.py + configuracion de URL
+- Modifico template de **index.html** para agregar boton "Leer mas".

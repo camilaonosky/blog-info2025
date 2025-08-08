@@ -1,5 +1,3 @@
--- Ejemplo para insertar 30 artículos con contenido real sobre videojuegos
-
 INSERT INTO blog_articulo (titulo, contenido, fecha_creacion, fecha_actualizacion, imagen_portada, autor_id) VALUES
 ('La evolución de los gráficos en videojuegos', 'Desde los píxeles de 8 bits hasta el ray tracing actual, los gráficos han sido clave en la experiencia gamer.', NOW(), NOW(), NULL, 1),
 ('Top 5 RPGs de la última década', 'Los juegos de rol han marcado tendencia con historias profundas y mundos abiertos. Descubre los mejores.', NOW(), NOW(), NULL, 1),
