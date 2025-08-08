@@ -1,7 +1,9 @@
 # blog-info2025
 Trabajo final "Blog de Videojuegos"
-
-
+INTEGRANTES: 
+    Paola, Zarza
+    Onosky, Camila
+    Gutierrez, Yanina   
 
 # PASOS
  - Crear entorno virtual `py -m venv .venv`
@@ -20,5 +22,17 @@ Trabajo final "Blog de Videojuegos"
  - Creacion de BD en worbench nombrada **bloginfo2025**
  - Creacion de archivo .env, configuracion de variables y base de datos
  - Aplico migraciones `python manage.py migrate` (creacion de tablas en  la db propias de django)
-- Verificacion de creacion de tablas
+- Verificacion de creacion de tablas.
 - Definicion de modelos (clases o entidades que representan tablas en la db).
+- Configuracion carpeta **media** y path `/media/` (almacena imagenes).
+- Instalacion de pillow (libreria para manejo de imagenes) `python -m pip install Pillow`
+- Generar migraciones `manage.py makemigrations ` (compara los modelos actuales con los de db, genera el archivo migraciones que contiene los cambios a realizar en la db)
+- Aplico cambios a la db `manage.py migrate`
+- Registro admin para articulos y comentarios
+- Se crea super usuario `python manage.py createsuperuser`
+- Creacion de plantilla/telmplate **index.html**
+- Configruacion directorio de templates
+- Creacion de la vista de home (index.html)
+- Configuracion de la URL de home 
+- Configuracion de visualizacion de imagenes en el navegador
+- Generacion de Script SQL(codigo) a traves de copilot para la insercion de articulos en db.
