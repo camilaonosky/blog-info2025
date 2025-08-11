@@ -39,3 +39,8 @@ INTEGRANTES:
 - Ejecutar script SQL en la bd
 - Creacion del template **articulo.html** + vista en apps.blog.views.py + configuracion de URL
 - Modifico template de **index.html** para agregar boton "Leer mas".
+- Creacion de modelo para usuarios
+- Creacion de nuevo archivo **forms.py**
+- Nuevo formulario para registrar usuarios en la db **RegistrarUsuario**
+- Nueva carpeta "Usuarios", se utilizara para almacenar templates de usuarios **registrar.html** + vistas + URLS
+- Agrego pagina de registro exitoso template + vista + URL **registro-exitoso**

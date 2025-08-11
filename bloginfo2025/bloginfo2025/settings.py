@@ -110,6 +110,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'blog.Usuario'  # Indica el modelo de usuario personalizado
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
