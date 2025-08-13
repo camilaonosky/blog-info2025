@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ClearableFileInput, ModelForm, TextInput, Textarea
-from .models import Articulo, Usuario
+from .models import Articulo, Comentario, Usuario
 from django.db import transaction
 
 
@@ -25,4 +25,16 @@ class ArticuloForm(ModelForm):
             'titulo': TextInput(attrs={'class': 'form-control'}),
             'contenido': Textarea(attrs={'class': 'form-control', 'rows': 6}),
             'imagen_portada': ClearableFileInput(attrs={'class': 'form-control'}),
+        }
+
+class ComentarioForm(ModelForm):
+    class Meta:
+        model = Comentario
+        fields = ['contenido']
+        widgets = {
+            'contenido': Textarea(attrs={
+                'class': 'form-control',
+                'rows': 3,
+                'placeholder': 'Escribí tu comentario...'
+            }),
         }

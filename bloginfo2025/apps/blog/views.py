@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .forms import ArticuloForm, RegistroUsuarioForm
+from .forms import ArticuloForm, ComentarioForm, RegistroUsuarioForm
 from .models import Articulo, Usuario
 from django.contrib.auth import logout
-
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -14,8 +14,18 @@ def index(request):
 
 # Vista para la pagina de un articulo del blog
 def articulo(request, articulo_id):
-    articulo = Articulo.objects.get(id=articulo_id)
-    return render(request, 'blog/articulo.html', {'articulo': articulo})
+    articulo = get_object_or_404(Articulo, id=articulo_id)
+    if request.method == 'POST':
+        form = ComentarioForm(request.POST)
+        if form.is_valid():
+            comentario = form.save(commit=False)
+            comentario.articulo = articulo
+            comentario.autor = request.user
+            comentario.save()
+            return redirect('articulo', articulo_id=articulo.id)
+    else:
+        form = ComentarioForm()
+    return render(request, 'blog/articulo.html', {'form_comentario': form, 'articulo': articulo})
 
 class RegistrarUsuario(CreateView):
     model = Usuario
@@ -30,6 +40,7 @@ def cerrar_sesion(request):
     logout(request)
     return render(request, 'usuarios/logout.html')
 
+@login_required
 def crear_articulo(request):
     if request.method == 'POST':
         form = ArticuloForm(request.POST, request.FILES)
@@ -41,3 +52,5 @@ def crear_articulo(request):
     else:
         form = ArticuloForm()
     return render(request, 'blog/crear-articulo.html', {'form': form})
+
+

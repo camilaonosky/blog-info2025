@@ -7,13 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registrar_usuario' %}">Registro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'crear_articulo' %}">Crear</a>
+                    <a class="nav-link" href="{% url 'crear_articulo' %}">Publicar</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -24,7 +18,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'cerrar_sesion' %}">Salir</a>
                     </li>
-                {% else %}
+                {% else %}                
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'registrar_usuario' %}">Registrate</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                     </li>

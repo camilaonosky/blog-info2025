@@ -1,0 +1,36 @@
+<div class="card mt-4">
+  <div class="card-header bg-secondary text-white">
+    <h5>Dejá tu comentario</h5>
+  </div>
+  <div class="card-body">
+    {% if user.is_authenticated %}
+      {% if form.errors %}
+        <div class="alert alert-danger">
+          Hubo un error. Revisá los campos e intentá de nuevo.
+        </div>
+      {% endif %}
+      <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="id_contenido" class="form-label">Comentario</label>
+          {{ form_comentario.contenido }}
+        </div>
+        <button type="submit" class="btn btn-secondary">Comentar</button>
+      </form>
+    {% else %}
+      <p class="text-muted">Tenés que <a href="{% url 'login' %}">iniciar sesión</a> para comentar.</p>
+    {% endif %}
+  </div>
+</div>
+<div class="list-group mb-4">
+    {% for comentario in articulo.comentarios.all %}
+        <div class="list-group-item">
+            <p>{{ comentario.contenido }}</p>
+            <small class="text-muted">
+                Por {{ comentario.autor.username }} el {{ comentario.fecha_creacion|date:"d/m/Y H:i" }}
+            </small>
+        </div>
+    {% empty %}
+        <div class="alert alert-info">No hay comentarios aún.</div>
+    {% endfor %}
+</div>
