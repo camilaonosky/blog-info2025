@@ -16,7 +16,7 @@
                             <img src="{{ articulo.imagen_portada.url }}" class="card-img-top" alt="Portada">
                         {% endif %}
                         <div class="card-body">
-                            <h5 class="card-title">{{ articulo.titulo }}</h5>
+                            <h5 class="card-title"><a href="{% url 'articulo' articulo.id %}">{{ articulo.titulo }}</a></h5>
                             <p class="card-text">{{ articulo.contenido|truncatewords:30 }}</p>
                         </div>
                         <div class="card-footer">
