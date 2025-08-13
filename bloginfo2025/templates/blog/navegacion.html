@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'registrar_usuario' %}">Registro</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'crear_articulo' %}">Crear</a>
+                </li>
             </ul>
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
@@ -19,14 +22,15 @@
                         <span class="navbar-text text-light">Hola, {{ user.username }}</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin:logout' %}">Salir</a>
+                        <a class="nav-link" href="{% url 'cerrar_sesion' %}">Salir</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'admin:login' %}">Iniciar sesión</a>
+                        <a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a>
                     </li>
                 {% endif %}
             </ul>
         </div>
     </div>
 </nav>
+

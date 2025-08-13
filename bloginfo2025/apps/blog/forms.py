@@ -1,5 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
-from .models import Usuario
+from django.forms import ClearableFileInput, ModelForm, TextInput, Textarea
+from .models import Articulo, Usuario
 from django.db import transaction
 
 
@@ -15,3 +16,13 @@ class RegistroUsuarioForm(UserCreationForm):
         user.is_staff = False
         user.save()
         return user
+
+class ArticuloForm(ModelForm):
+    class Meta:
+        model = Articulo
+        fields = ['titulo', 'contenido', 'imagen_portada']
+        widgets = {
+            'titulo': TextInput(attrs={'class': 'form-control'}),
+            'contenido': Textarea(attrs={'class': 'form-control', 'rows': 6}),
+            'imagen_portada': ClearableFileInput(attrs={'class': 'form-control'}),
+        }

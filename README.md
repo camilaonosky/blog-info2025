@@ -44,3 +44,6 @@ INTEGRANTES:
 - Nuevo formulario para registrar usuarios en la db **RegistrarUsuario**
 - Nueva carpeta "Usuarios", se utilizara para almacenar templates de usuarios **registrar.html** + vistas + URLS
 - Agrego pagina de registro exitoso template + vista + URL **registro-exitoso**
+- Se crea barra de navegacion para las URLs
+- Creacion de template para cerrar sesion + vista + URL **cerrar-sesion**
+- Se agrega creacion de posts

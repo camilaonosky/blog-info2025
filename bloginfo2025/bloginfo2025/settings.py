@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 
 load_dotenv()  # Carga las variables de entorno
@@ -111,6 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'blog.Usuario'  # Indica el modelo de usuario personalizado
+
+LOGIN_REDIRECT_URL = reverse_lazy('index')  # Redirige al index después de iniciar sesión
 
 
 # Internationalization
