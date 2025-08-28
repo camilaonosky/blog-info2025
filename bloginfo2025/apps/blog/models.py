@@ -39,3 +39,9 @@ class Comentario(models.Model):
 
     def __str__(self):
         return f'Comentario de {self.autor} en {self.articulo}'
+    
+class Mensaje_Contacto(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField()
+    mensaje = models.CharField(max_length=400)
+    fecha_envio = models.DateTimeField(auto_now_add=True)

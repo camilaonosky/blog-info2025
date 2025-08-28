@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
-from django.forms import ClearableFileInput, ModelForm, TextInput, Textarea
-from .models import Articulo, Comentario, Usuario
+from django.forms import ClearableFileInput, EmailInput, ModelForm, TextInput, Textarea
+from .models import Articulo, Comentario, Usuario, Mensaje_Contacto
 from django.db import transaction
 
 
@@ -37,4 +37,14 @@ class ComentarioForm(ModelForm):
                 'rows': 3,
                 'placeholder': 'Escribí tu comentario...'
             }),
+        }
+
+class MensajeContactoForm(ModelForm):
+    class Meta:
+        fields = ['nombre', 'email', 'mensaje']
+        model = Mensaje_Contacto
+        widgets = {
+            'nombre': TextInput(attrs={'class': 'form-control', 'placeholder': 'Tu nombre'}),
+            'email': EmailInput(attrs={'class': 'form-control', 'placeholder': 'Tu email'}),
+            'mensaje': Textarea(attrs={'class': 'form-control', 'rows': 5, 'placeholder': 'Escribí tu mensaje'}),
         }

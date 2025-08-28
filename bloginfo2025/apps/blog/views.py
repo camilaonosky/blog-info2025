@@ -1,7 +1,8 @@
+from urllib import request
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from .forms import ArticuloForm, ComentarioForm, RegistroUsuarioForm
+from .forms import ArticuloForm, ComentarioForm, MensajeContactoForm, RegistroUsuarioForm
 from .models import Articulo, Usuario
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
@@ -53,4 +54,19 @@ def crear_articulo(request):
         form = ArticuloForm()
     return render(request, 'blog/crear-articulo.html', {'form': form})
 
+def acerca_de(request):
+    return render(request, 'blog/acerca-de.html')
 
+def mensaje_enviado(request):
+    return render(request, 'blog/mensaje-enviado.html')
+
+def contacto(request):
+    if request.method == 'POST':
+        form = MensajeContactoForm(request.POST)
+        if form.is_valid():
+            # Procesar el formulario
+            form.save()
+            return redirect('mensaje_enviado')
+    else:
+        form = MensajeContactoForm()
+    return render(request, 'blog/contacto.html', {'form': form })

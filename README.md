@@ -46,4 +46,5 @@ INTEGRANTES:
 - Agrego pagina de registro exitoso template + vista + URL **registro-exitoso**
 - Se crea barra de navegacion para las URLs
 - Creacion de template para cerrar sesion + vista + URL **cerrar-sesion**
-- Se agrega creacion de articulos
+- Se agrega creacion de articulos solo para los usuarios que se encuentgren autenticados **aticulo.html**
+- Se realiza el template + vistas + url para comentarios **comentarios.html**

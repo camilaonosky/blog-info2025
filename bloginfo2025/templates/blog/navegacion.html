@@ -6,12 +6,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-            {% if user.is_authenticated %}    
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'acerca_de' %}">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                </li>
+                {% if user.is_authenticated %}  
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'crear_articulo' %}">Publicar</a>
                 </li>
-             {% endif %}
+                {% endif %}
             </ul>
+
             <ul class="navbar-nav">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
