@@ -48,3 +48,4 @@ INTEGRANTES:
 - Creacion de template para cerrar sesion + vista + URL **cerrar-sesion**
 - Se agrega creacion de articulos solo para los usuarios que se encuentgren autenticados **aticulo.html**
 - Se realiza el template + vistas + url para comentarios **comentarios.html**
+- Se agrega "Contacto" y "Acerca de" 
