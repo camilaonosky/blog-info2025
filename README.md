@@ -1,9 +1,9 @@
 # blog-info2025
 Trabajo final "Blog de Videojuegos"
 INTEGRANTES: 
-    Paola, Zarza
-    Onosky, Camila
-    Gutierrez, Yanina   
+ - Paola, Zarza
+ - Onosky, Camila
+ - Gutierrez, Yanina   
 
 # PASOS
  - Crear entorno virtual `py -m venv .venv`
