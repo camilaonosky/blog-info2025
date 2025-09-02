@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import articulo, index, RegistrarUsuario, mensaje_enviado, registro_exitoso, cerrar_sesion, crear_articulo, acerca_de, contacto
+from .views import articulo, index, RegistrarUsuario, mensaje_enviado, registro_exitoso, cerrar_sesion, crear_articulo, acerca_de, contacto, categorias
 from django.contrib.auth.views import LoginView
 
 
@@ -15,4 +15,5 @@ urlpatterns = [
     path('acerca-de/', acerca_de, name='acerca_de'),
     path('contacto/', contacto, name='contacto'),
     path('mensaje-enviado/', mensaje_enviado, name='mensaje_enviado'),
+    path('categorias/', categorias, name='categorias'),
 ]   

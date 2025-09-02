@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from .forms import ArticuloForm, ComentarioForm, MensajeContactoForm, RegistroUsuarioForm
-from .models import Articulo, Usuario
+from .models import Articulo, Usuario, Categoria
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 
@@ -66,7 +66,11 @@ def contacto(request):
         if form.is_valid():
             # Procesar el formulario
             form.save()
-            return redirect('mensaje_enviado')
+            return redirect('contacto')
     else:
         form = MensajeContactoForm()
     return render(request, 'blog/contacto.html', {'form': form })
+
+def categorias(request):
+    categorias = Categoria.objects.all()
+    return render(request, 'blog/categorias.html', {'categorias': categorias}) 

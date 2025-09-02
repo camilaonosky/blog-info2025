@@ -49,3 +49,5 @@ INTEGRANTES:
 - Se agrega creacion de articulos solo para los usuarios que se encuentgren autenticados **aticulo.html**
 - Se realiza el template + vistas + url para comentarios **comentarios.html**
 - Se agrega "Contacto" y "Acerca de" 
+- Agrego categorias a los articulos.
+- Se agrega categorias a la barra de navegacion + template + vistas + urls **categorias.html**

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ articulo.titulo }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include 'blog/navegacion.html' %}
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-3xl font-bold mb-6">Categorías de Videojuegos 🎮</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for categoria in categorias %}
+            <div class="bg-white shadow-md rounded-2xl p-4 hover:shadow-lg transition">
+                <h2 class="text-xl font-semibold mb-2">{{ categoria.nombre }}</h2>
+                <p class="text-gray-600">{{ categoria.descripcion }}</p>
+            </div>
+            {% empty %}
+            <p>No hay categorías disponibles aún.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
