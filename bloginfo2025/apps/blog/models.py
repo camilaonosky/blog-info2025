@@ -20,6 +20,12 @@ class Usuario(AbstractUser):
     def get_absolute_url(self):
         return reverse('index')
 
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    def __str__(self):
+        return self.nombre
+
 class Articulo(models.Model):
     titulo = models.CharField(max_length=200)
     contenido = models.TextField()
@@ -27,6 +33,7 @@ class Articulo(models.Model):
     fecha_creacion = models.DateTimeField(auto_now_add=True)
     fecha_actualizacion = models.DateTimeField(auto_now=True)
     imagen_portada = models.ImageField(upload_to='portadas/', blank=True, null=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING, default=1)
 
     def __str__(self):
         return self.titulo
@@ -45,3 +52,4 @@ class Mensaje_Contacto(models.Model):
     email = models.EmailField()
     mensaje = models.CharField(max_length=400)
     fecha_envio = models.DateTimeField(auto_now_add=True)
+
