@@ -74,3 +74,8 @@ def contacto(request):
 def categorias(request):
     categorias = Categoria.objects.all()
     return render(request, 'blog/categorias.html', {'categorias': categorias}) 
+
+def articulos_por_categoria(request, categoria_id):
+    articulos = Articulo.objects.filter(categoria__id=categoria_id)
+    categoria = get_object_or_404(Categoria, id=categoria_id)
+    return render(request, 'blog/articulos-por-categoria.html', {'articulos': articulos, 'categoria': categoria})
